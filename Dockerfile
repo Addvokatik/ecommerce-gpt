@@ -17,11 +17,7 @@ COPY Gemfile Gemfile.lock /app/
 RUN gem install bundler:2.3.5
 
 # Install gems for development
-RUN bundle install --without production
-
-# Create a new Rails application with Active Admin
-RUN rails new . --force --skip-bundle
-RUN rails generate active_admin:install
+RUN bundle install
 
 # Copy the rest of the application code into the container
 COPY . /app/
