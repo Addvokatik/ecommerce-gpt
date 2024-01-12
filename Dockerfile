@@ -13,14 +13,14 @@ RUN gem update bundler
 # Copy the Gemfile and Gemfile.lock into the container
 COPY Gemfile Gemfile.lock /app/
 
+# Copy the rest of the application code into the container
+COPY . /app/
+
 # Install bundler
 RUN gem install bundler:2.3.5
 
 # Install gems for development
 RUN bundle install
-
-# Copy the rest of the application code into the container
-COPY . /app/
 
 # Expose port 3000 to the outside world
 EXPOSE 3000
