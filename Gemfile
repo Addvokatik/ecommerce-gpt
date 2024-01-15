@@ -35,3 +35,12 @@ gem "jbuilder"
 
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
+
+group :development do
+     gem 'guard'
+     gem 'guard-livereload', '~> 2.5', require: false
+   end
+
+   group :development, :test do
+     gem 'rubocop', require: false
+   end
