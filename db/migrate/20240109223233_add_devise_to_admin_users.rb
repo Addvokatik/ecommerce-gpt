@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class AddDeviseToAdminUsers < ActiveRecord::Migration[7.1]
   def change
     change_table(:admin_users) do |t|
@@ -7,4 +9,3 @@ class AddDeviseToAdminUsers < ActiveRecord::Migration[7.1]
     end
   end
 end
-
