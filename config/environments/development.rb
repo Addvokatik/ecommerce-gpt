@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'active_support/core_ext/integer/time'
+require 'omniauth'
 
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
@@ -75,4 +76,9 @@ Rails.application.configure do
 
   # Raise error when a before_action's only/except options reference missing actions
   config.action_controller.raise_on_missing_callback_actions = true
+
+  # Add OmniAuth builder
+  config.middleware.use OmniAuth::Builder do
+    # Add your OmniAuth strategies here
+  end
 end

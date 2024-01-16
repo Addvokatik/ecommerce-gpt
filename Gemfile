@@ -53,3 +53,5 @@ group :development, :test do
 end
 
 gem 'nokogiri'
+
+gem 'omniauth-google-oauth2'
