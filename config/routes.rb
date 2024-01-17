@@ -1,12 +1,20 @@
-# frozen_string_literal: true
-
 Rails.application.routes.draw do
-  devise_for :admin_users
+  devise_for :users, path: 'users', controllers: {
+    registrations: 'users/registrations',
+    sessions: 'users/sessions',
+    omniauth_callbacks: 'users/omniauth_callbacks'
+  }
+
+  devise_for :admin_users, path: 'admin_users', controllers: {
+    registrations: 'admin_users/registrations',
+    sessions: 'admin_users/sessions',
+    omniauth_callbacks: 'admin_users/omniauth_callbacks'
+  }
+
   ActiveAdmin.routes(self)
-  # ...
-  get 'auth/:provider/callback', to: 'sessions#create'
-  get 'auth/failure', to: redirect('/')
-  get 'login', to: 'sessions#new' 
+
+  get 'login', to: 'sessions#new'
+
   # Інші маршрути...
   # ...
 end

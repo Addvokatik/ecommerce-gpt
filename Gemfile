@@ -45,13 +45,13 @@ end
 
 group :development, :test do
   gem 'rubocop', require: false
-end
-
-group :development, :test do
-  gem 'rubocop', require: false
   gem 'rubocop-rails', require: false
 end
 
 gem 'nokogiri'
 
+gem 'omniauth'
+
 gem 'omniauth-google-oauth2'
+
+gem 'omniauth-rails_csrf_protection'
