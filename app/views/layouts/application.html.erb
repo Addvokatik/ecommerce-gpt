@@ -1,16 +1,20 @@
+<!-- app/views/layouts/application.html.erb -->
 <!DOCTYPE html>
 <html>
   <head>
-    <title>EcommerceGpt</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Your Site Title</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <%= render partial: 'layouts/header' %>
+    <% if controller_name == 'home' && action_name == 'index' %>
+      <%= image_tag("logo.png", alt: "Site Logo") %>
+    <% end %>
     <%= yield %>
   </body>
 </html>

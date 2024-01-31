@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
-class AdminUser < ApplicationRecord
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+# app/controllers/admin_users/sessions_controller.rb
+module AdminUsers
+  class SessionsController < Devise::SessionsController
+    # ваш код тут
+  end
 end
