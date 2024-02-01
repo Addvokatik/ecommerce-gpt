@@ -3,23 +3,39 @@ body {
      font-family: Arial, sans-serif;
    }
    
-   header {
-     background-color: #f8f9fa;
-     padding: 20px;
-     margin-bottom: 20px;
-   }
-   
-   .logo h1 {
-     font-size: 1.5em;
-   }
-   
-   nav {
-     margin: 20px 0;
-   }
+   /* app/assets/stylesheets/application.css */
+header {
+  background-color: #f8f9fa;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  font-size: 1.5em;
+  color: #333;
+}
+
+header nav {
+  margin: 20px 0;
+}
+
+header nav a {
+  color: #333;
+  text-decoration: none;
+  margin-right: 10px;
+}
+
+header nav a:hover {
+  color: #007bff;
+}
    
    .auth {
      margin: 20px 0;
    }
+
+   .logo h1 {
+    font-size: 1.5em;
+  }
 /* app/assets/stylesheets/application.css */
    a {
      text-decoration: none;

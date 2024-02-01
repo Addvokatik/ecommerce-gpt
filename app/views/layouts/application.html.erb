@@ -11,9 +11,8 @@
   </head>
 
   <body>
-    <%= render partial: 'layouts/header' %>
-    <% if controller_name == 'home' && action_name == 'index' %>
-      <%= image_tag("logo.png", alt: "Site Logo") %>
+    <% unless controller_name == 'sessions' %>
+      <%= render partial: 'layouts/header' %>
     <% end %>
     <%= yield %>
   </body>
