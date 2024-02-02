@@ -1,1 +1,26 @@
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+     <div>
+          <%= f.label :email %>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+     enddiv>
+
+     <div>
+          <%= f.label :password %>
+          <%= f.password_field :password, autocomplete: "current-password" %>
+     </div>
+
+     <% if devise_mapping.rememberable? -%>
+          <div>
+               <%= f.check_box :remember_me %>
+               <%= f.label :remember_me %>
+          </div>
+     <% end -%>
+
+     <div>
+          <%= f.submit "Log in" %>
+     </div>
+<% end %>
+
+<%= link_to "Log in", new_user_session_path %>
 <%= link_to "Sign in with Google", "/auth/google_oauth2" %>
+<%= link_to "Log out", destroy_user_session_path, method: :delete %>

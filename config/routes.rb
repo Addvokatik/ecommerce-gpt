@@ -18,6 +18,10 @@ Rails.application.routes.draw do
     # omniauth_callbacks: 'admin_users/omniauth_callbacks'
   # }
 
+  devise_scope :user do
+    get '/users/sign_out' => 'devise/sessions#destroy'
+  end
+
   ActiveAdmin.routes(self)
 
   get 'login', to: 'sessions#new'
