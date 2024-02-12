@@ -5,7 +5,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh; /* Висота відповідає висоті вікна перегляду */
-  margin: 0; /* Видаляємо відступи */
+  margin: 0 auto; /* Видаляємо відступи */
   line-height: 1.5; /* Додаємо відстань між строками */
 }
 
