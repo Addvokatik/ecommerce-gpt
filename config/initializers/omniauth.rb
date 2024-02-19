@@ -1,3 +1,8 @@
 Rails.application.config.middleware.use OmniAuth::Builder do
-  provider :google_oauth2, '908028487309-rafp8hkaj7986s88r72j3p3f2e30t2lu.apps.googleusercontent.com', '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'
+  provider :google_oauth2, ENV['GOOGLE_CLIENT_ID'], ENV['GOOGLE_CLIENT_SECRET'], {
+    scope: 'userinfo.email,userinfo.profile'
+  }
+
+  OmniAuth.config.allowed_request_methods = [:post, :get]
+  OmniAuth.config.silence_get_warning = true
 end
