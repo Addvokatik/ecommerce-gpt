@@ -1,8 +1,10 @@
 # frozen_string_literal: true
 
-module Admin
-  class ApplicationController < ActiveAdmin::BaseController
-    def authenticate_admin_user
+module ActiveAdmin
+  class BaseController < ::InheritedResources::Base
+    before_action :authenticate_admin_user!
+
+    def authenticate_admin_user!
       authenticate_user!
       return if current_user.admin?
 
